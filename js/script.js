@@ -1,6 +1,6 @@
-/* --script.js do meu portfólio --*/
+/* -- script.js do meu portfólio -- */
 
-/* ── nav ativo ao rolar ── */
+/* ── NAV ATIVO AO ROLAR ── */
 const secoes = document.querySelectorAll('section[id]');
 const linksNav = document.querySelectorAll('.nav-links a');
 
@@ -22,8 +22,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-/* ── Animação de entrada───*/
-   
+/* ── ANIMAÇÃO REVEAL ── */
 const elementosReveal = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entradas) => {
@@ -33,60 +32,62 @@ const observer = new IntersectionObserver((entradas) => {
     }
   });
 }, {
-  threshold: 0       // dispara assim que qualquer pixel aparecer
+  threshold: 0.1
 });
 
-// Observa todos os elementos — inclusive os já visíveis ao carregar
 elementosReveal.forEach(el => observer.observe(el));
 
+
+/* ── FORMULÁRIO DE CONTATO ── */
 const formulario = document.getElementById("formContato");
 
-if(formulario){
+if (formulario) {
 
-    formulario.addEventListener("submit", function(event){
+  formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-        event.preventDefault();
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+    const status = document.getElementById("mensagemStatus");
 
-        const nome = document.getElementById("nome").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const mensagem = document.getElementById("mensagem").value.trim();
+    /* ── validação campos ── */
+    if (!nome || !email || !mensagem) {
+      status.style.color = "#d9534f";
+      status.textContent = "Preencha todos os campos.";
+      return;
+    }
 
-        const status = document.getElementById("mensagemStatus");
+    /* ── validação e-mail ── */
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
 
-        if(nome === "" || email === "" || mensagem === ""){
+    if (!emailValido) {
+      status.style.color = "#d9534f";
+      status.textContent = "Por favor, insira um e-mail válido.";
+      return;
+    }
 
-            status.style.color = "#d9534f";
-            status.textContent = "Preencha todos os campos.";
-
-            return;
-        }
-
-        emailjs.send(
-            "amandape17@outlook.com",
-            "template_3t1qp9z",
-            {
-                name: nome,
-                email: email,
-                message: mensagem
-            }
-        )
-        .then(function(){
-
-            status.style.color = "#3b5c45";
-            status.textContent = "Mensagem enviada com sucesso!";
-
-            formulario.reset();
-
-        })
-        .catch(function(error){
-
-            console.error(error);
-
-            status.style.color = "#d9534f";
-            status.textContent = "Erro ao enviar a mensagem.";
-
-        });
-
+    /* ── envio EmailJS ── */
+    emailjs.send(
+      "service_xhw180h",   // 🔴 TROQUE AQUI PELO SEU SERVICE ID REAL
+      "template_3t1qp9z",
+      {
+        name: nome,
+        email: email,
+        message: mensagem
+      }
+    )
+    .then(function () {
+      status.style.color = "#3b5c45";
+      status.textContent = "Mensagem enviada com sucesso!";
+      formulario.reset();
+    })
+    .catch(function (error) {
+      console.error("Erro ao enviar:", error);
+      status.style.color = "#d9534f";
+      status.textContent = "Erro ao enviar a mensagem.";
     });
+
+  });
 
 }

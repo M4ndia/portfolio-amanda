@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato – Amanda Pereira</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">AP<span>.</span></div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
+      <li><a href="habilidades.html">Habilidades</a></li>
+      <li><a href="contato.html" class="active">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTATO -->
+  <section class="contato" style="padding-top: 6rem;">
+    <div class="contato-inner">
+
+      <!-- LADO ESQUERDO -->
+      <div class="contato-info">
+        <h2>Vamos Conversar?</h2>
+
+        <div class="contato-item">
+          <a href="mailto:amandape17@outlook.com">amandape17@outlook.com</a>
+        </div>
+
+        <div class="contato-item">
+          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+
+        <div class="contato-item">
+          <a href="https://github.com" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- LADO DIREITO (FORMULÁRIO) -->
+      <div class="contato-citacao">
+
+        <h2>Envie uma mensagem</h2>
+
+        <form id="formContato">
+
+          <input type="text" id="nome" placeholder="Seu nome" />
+          <input type="email" id="email" placeholder="Seu e-mail" />
+          <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem"></textarea>
+
+          <button type="submit" class="btn">Enviar mensagem</button>
+
+          <p id="mensagemStatus"></p>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Amanda Pereira. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- EMAILJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    emailjs.init({
+      publicKey: "hoL0jj-HKxTR8kgQK"
+    });
+  </script>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
