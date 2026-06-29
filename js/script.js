@@ -1,9 +1,6 @@
-/* =============================================
-   SCRIPT.JS — Portfólio Amanda Pereira
-   ============================================= */
+/* --script.js do meu portfólio --*/
 
-
-/* ── 1. NAV ATIVO AO ROLAR ─────────────────── */
+/* ── nav ativo ao rolar ── */
 const secoes = document.querySelectorAll('section[id]');
 const linksNav = document.querySelectorAll('.nav-links a');
 
@@ -25,15 +22,8 @@ window.addEventListener('scroll', () => {
 });
 
 
-/* ── 2. ANIMAÇÃO DE ENTRADA (scroll reveal) ───
-   O observer observa cada elemento com .reveal.
-   Quando ele entra na tela, adiciona .visivel.
-
-   CORREÇÃO: usamos threshold: 0 para disparar
-   assim que qualquer pixel aparecer, e chamamos
-   observer.observe() logo ao carregar a página
-   para pegar os elementos já visíveis.
-   ─────────────────────────────────────────── */
+/* ── Animação de entrada───*/
+   
 const elementosReveal = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entradas) => {
