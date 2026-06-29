@@ -1,0 +1,563 @@
+/* =============================================
+   STYLE.CSS — Portfólio Amanda Pereira
+   ============================================= */
+
+
+/* ── 1. VARIÁVEIS ─────────────────────────── */
+:root {
+  --verde-escuro:  #3b5c45;
+  --verde-medio:   #4e7a5a;
+  --verde-claro:   #c8d9c4;
+  --creme:         #f5f3ef;
+  --creme-escuro:  #ede9e3;
+  --areia:         #e8e4dc;
+  --texto-escuro:  #2b2b2b;
+  --texto-medio:   #4a4a4a;
+  --texto-claro:   #7a7a7a;
+  --branco:        #ffffff;
+  --borda:         #d8d4cc;
+
+  --fonte-titulo: 'Playfair Display', Georgia, serif;
+  --fonte-corpo:  'Inter', system-ui, sans-serif;
+}
+
+
+/* ── 2. RESET ─────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--creme);
+  color: var(--texto-escuro);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.titulo-secao {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--texto-escuro);
+  margin-bottom: 2.5rem;
+}
+
+
+/* ── 3. NAV ───────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 60px;
+}
+
+.nav-logo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+}
+
+.nav-logo span {
+  color: var(--verde-escuro);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  color: var(--texto-medio);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--verde-escuro);
+  border-bottom-color: var(--verde-escuro);
+}
+
+
+/* ── 4. HERO ──────────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6rem 5% 5rem;
+}
+
+.eyebrow {
+  font-size: 0.95rem;
+  color: var(--texto-claro);
+  margin-bottom: 0.5rem;
+}
+
+.hero-texto h1 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  line-height: 1.1;
+  color: var(--verde-escuro);
+  margin-bottom: 1rem;
+}
+
+.divisor {
+  width: 40px;
+  height: 2px;
+  background: var(--verde-medio);
+  margin-bottom: 1rem;
+}
+
+.cargo {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--texto-medio);
+  margin-bottom: 0.75rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.82rem;
+  color: var(--texto-claro);
+}
+
+.tags span:not(:last-child)::after {
+  content: ' •';
+  color: var(--verde-claro);
+  margin-left: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--verde-escuro);
+  color: var(--branco);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  background: var(--verde-medio);
+  transform: translateY(-2px);
+}
+
+.hero-foto {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--areia);
+}
+
+.hero-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ── 5. SOBRE ─────────────────────────────── */
+.sobre-section {
+  background: var(--creme-escuro);
+  padding: 4rem 5%;
+}
+
+.sobre-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.sobre-card {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 2rem;
+}
+
+/* Header do card: ícone + título lado a lado */
+.sobre-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.sobre-icon {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--borda);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto-medio);
+  flex-shrink: 0; /* não encolhe */
+}
+
+.sobre-card-header h2 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sobre-card p {
+  font-size: 0.875rem;
+  color: var(--texto-medio);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+
+/* Traços de personalidade */
+.sobre-tracos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.traco {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  font-size: 0.875rem;
+  color: var(--texto-medio);
+}
+
+.traco-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--verde-escuro);
+  flex-shrink: 0;
+}
+
+
+/* ── 6. HABILIDADES ───────────────────────── */
+.habilidades {
+  padding: 4rem 5%;
+  background: var(--creme);
+}
+
+.habilidades-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.habilidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.habilidade-card {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 1.1rem 1.4rem;
+  min-width: 90px;
+
+  /* ícone e texto empilhados */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  cursor: default;
+}
+
+.habilidade-card:hover {
+  border-color: var(--verde-medio);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+/* O SVG dentro do card fica verde escuro */
+.habilidade-card svg {
+  color: var(--verde-escuro);
+}
+
+/* O texto abaixo do ícone */
+.habilidade-card span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--texto-medio);
+  text-align: center;
+}
+
+
+/* ── 7. PROJETOS ──────────────────────────── */
+.projetos {
+  padding: 4rem 5% 5rem;
+  background: var(--creme-escuro);
+}
+
+.projetos-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.projeto-card {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.projeto-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+/* Círculo cinza com ícone SVG verde */
+.projeto-icone {
+  width: 48px;
+  height: 48px;
+  background: var(--creme-escuro);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--verde-escuro);
+  margin-bottom: 0.25rem;
+}
+
+.projeto-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.projeto-card p {
+  font-size: 0.8rem;
+  color: var(--texto-claro);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.projeto-link {
+  font-size: 0.78rem;
+  color: var(--verde-escuro);
+  font-weight: 500;
+  transition: letter-spacing 0.15s;
+}
+
+.projeto-link:hover {
+  letter-spacing: 0.02em;
+}
+
+
+/* ── 8. CONTATO ───────────────────────────── */
+.contato {
+  padding: 4rem 5%;
+  background: var(--creme);
+}
+
+.contato-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contato-info h2 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* Linha de contato: ícone + texto lado a lado */
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--texto-medio);
+  margin-bottom: 0.875rem;
+}
+
+.contato-item svg {
+  color: var(--verde-escuro);
+  flex-shrink: 0;
+}
+
+.contato-citacao {
+  background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 100%;
+}
+
+.aspas {
+  font-family: var(--fonte-titulo);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--verde-claro);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contato-citacao blockquote {
+  font-family: var(--fonte-titulo);
+  font-size: 1.05rem;
+  color: var(--texto-medio);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+
+/* ── 9. RODAPÉ ────────────────────────────── */
+footer {
+  background: var(--verde-escuro);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 1.25rem 5%;
+  font-size: 0.8rem;
+}
+
+
+/* ── 10. ANIMAÇÃO SCROLL REVEAL ───────────── */
+/* Por enquanto desativada — tudo fica visível */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* ── 11. RESPONSIVIDADE ───────────────────── */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 3rem;
+  }
+
+  .hero-foto {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .sobre-inner,
+  .contato-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+#formContato{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:20px;
+}
+
+#formContato input,
+#formContato textarea{
+
+     width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+
+    background: var(--creme);
+
+    color: var(--texto-escuro);
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    transition: .25s;
+}
+
+#formContato input,
+#formContato textarea{
+
+    width:100%;
+    padding:14px;
+
+    border:1px solid var(--borda);
+
+    background: var(--creme);
+
+    color: var(--texto-escuro);
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    outline:none;
+}
+
+#formContato input:focus,
+#formContato textarea:focus{
+
+    border-color: var(--verde-medio);
+
+    box-shadow: 0 0 0 3px rgba(78,122,90,.15);
+
+}
