@@ -1,6 +1,6 @@
 /* -- script.js do meu portfólio -- */
 
-/* ── NAV ATIVO AO ROLAR ── */
+/* ativo ao rolar */
 const secoes = document.querySelectorAll('section[id]');
 const linksNav = document.querySelectorAll('.nav-links a');
 
@@ -22,7 +22,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-/* ── ANIMAÇÃO REVEAL ── */
+/* animacao reveal */
 const elementosReveal = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entradas) => {
@@ -38,7 +38,7 @@ const observer = new IntersectionObserver((entradas) => {
 elementosReveal.forEach(el => observer.observe(el));
 
 
-/* ── FORMULÁRIO DE CONTATO ── */
+/* formulario contato */
 const formulario = document.getElementById("formContato");
 
 if (formulario) {
@@ -51,14 +51,14 @@ if (formulario) {
     const mensagem = document.getElementById("mensagem").value.trim();
     const status = document.getElementById("mensagemStatus");
 
-    /* ── validação campos ── */
+    /* validação campos */
     if (!nome || !email || !mensagem) {
       status.style.color = "#d9534f";
       status.textContent = "Preencha todos os campos.";
       return;
     }
 
-    /* ── validação e-mail ── */
+    /*  validação e-mail */
     const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
 
     if (!emailValido) {
@@ -67,9 +67,9 @@ if (formulario) {
       return;
     }
 
-    /* ── envio EmailJS ── */
+    /*envio EmailJS  */
     emailjs.send(
-      "service_xhw180h",   // 🔴 TROQUE AQUI PELO SEU SERVICE ID REAL
+      "service_xhw180h",   
       "template_3t1qp9z",
       {
         name: nome,

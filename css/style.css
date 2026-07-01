@@ -1,9 +1,5 @@
-/* =============================================
-   STYLE.CSS — Portfólio Amanda Pereira
-   ============================================= */
 
-
-/* ── 1. VARIÁVEIS ─────────────────────────── */
+/* variaveis*/
 :root {
   --verde-escuro:  #3b5c45;
   --verde-medio:   #4e7a5a;
@@ -22,7 +18,7 @@
 }
 
 
-/* ── 2. RESET ─────────────────────────────── */
+/* reset*/
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -62,7 +58,7 @@ img {
 }
 
 
-/* ── 3. NAV ───────────────────────────────── */
+/* nav */
 nav {
   position: sticky;
   top: 0;
@@ -106,7 +102,7 @@ nav {
 }
 
 
-/* ── 4. HERO ──────────────────────────────── */
+/* hero*/
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -192,7 +188,7 @@ nav {
 }
 
 
-/* ── 5. SOBRE ─────────────────────────────── */
+/* sobre*/
 .sobre-section {
   background: var(--creme-escuro);
   padding: 4rem 5%;
@@ -275,7 +271,7 @@ nav {
 }
 
 
-/* ── 6. HABILIDADES ───────────────────────── */
+/* habilidades */
 .habilidades {
   padding: 4rem 5%;
   background: var(--creme);
@@ -330,7 +326,7 @@ nav {
 }
 
 
-/* ── 7. PROJETOS ──────────────────────────── */
+/* projetos*/
 .projetos {
   padding: 4rem 5% 5rem;
   background: var(--creme-escuro);
@@ -400,7 +396,7 @@ nav {
 }
 
 
-/* ── 8. CONTATO ───────────────────────────── */
+/* contato */
 .contato {
   padding: 4rem 5%;
   background: var(--creme);
@@ -465,7 +461,7 @@ nav {
 }
 
 
-/* ── 9. RODAPÉ ────────────────────────────── */
+/* rodapé */
 footer {
   background: var(--verde-escuro);
   color: rgba(255, 255, 255, 0.7);
@@ -475,15 +471,14 @@ footer {
 }
 
 
-/* ── 10. ANIMAÇÃO SCROLL REVEAL ───────────── */
-/* Por enquanto desativada — tudo fica visível */
+/* animacao */
 .reveal {
   opacity: 1;
   transform: none;
 }
 
 
-/* ── 11. RESPONSIVIDADE ───────────────────── */
+/* responsividade */
 @media (max-width: 700px) {
   .hero {
     grid-template-columns: 1fr;
